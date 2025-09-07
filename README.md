@@ -1,12 +1,22 @@
-# Ad-Library Data Pipeline (offline / file-only)
+# 💡Ad-Library Data Pipeline (offline / file-only)
 
 The pipeline processes **Facebook Ad Library** exports **without tokens or API**.  
 It performs:
+
 - normalization of raw columns into a canonical schema,
 - enrichment: `duration_hours`, `media_mix`, `language`, `is_usa`,
 - computes ranking metric: `proxy_score`,
 - selects the **Top-10 ads for USA**,
 - generates a mini-report.
+
+## ⛴ Docker run
+
+```bash
+docker run --rm \
+  -v "$(pwd)/input:/app/input" \
+  -v "$(pwd)/outputs:/app/outputs" \
+  adlib-file-pipeline:latest
+```
 
 ## 📂 Project Structure
 
@@ -26,13 +36,4 @@ ad-library-pipeline/
 │  └─ .gitkeep
 └─ outputs/              # pipeline results
    └─ .gitkeep
-
-
-## Docker run
-```bash
-docker run --rm \
-  -v "$(pwd)/input:/app/input" \
-  -v "$(pwd)/outputs:/app/outputs" \
-  adlib-file-pipeline:latest
-
-
+```
