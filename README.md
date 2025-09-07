@@ -20,13 +20,13 @@ docker run --rm \
 
 ## 📂 Project Structure
 
-```bash
+```markdown
 ad-library-pipeline/
 ├─ adlib/
 │  ├─ __init__.py
 │  ├─ io.py              # load input files, parse JSON strings
 │  ├─ enrich.py          # enrichment functions: dates, duration, language, media_mix, is_usa, score
-│  └─ pipeline.py        # orchestration: read -> normalize -> enrich -> save
+│  └─ pipeline.py        # # orchestration: read -> normalize -> enrich -> save
 ├─ run_file_only.py      # thin wrapper: calls pipeline.main()
 ├─ requirements.txt
 ├─ Dockerfile
